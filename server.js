@@ -13,8 +13,9 @@ const app = express();
 
 // CONFIGURING MONODB WITH MONGOOSE
 const mongoose = require("mongoose");
-const url = "mongodb://localhost/tusk_db";
-// const url = "mongodb://DCO-DB-DEV:dcodbdev@dc-event-api-shard-00-00.nfp9e.mongodb.net:27017,dc-event-api-shard-00-01.nfp9e.mongodb.net:27017,dc-event-api-shard-00-02.nfp9e.mongodb.net:27017/dco_db?ssl=true&replicaSet=atlas-148vpq-shard-0&authSource=admin&retryWrites=true&w=majority";
+// const url = "mongodb://localhost/tusk_db";
+// const url = "mongodb+srv://tuskadmin:tuskadmin@tusk-server-api.ldpm0.mongodb.net/tusk_db?retryWrites=true&w=majority";
+const url = "mongodb://tuskadmin:tuskadmin@tusk-server-api-shard-00-00.ldpm0.mongodb.net:27017,tusk-server-api-shard-00-01.ldpm0.mongodb.net:27017,tusk-server-api-shard-00-02.ldpm0.mongodb.net:27017/tusk_db?replicaSet=atlas-ngmspq-shard-0&ssl=true&authSource=admin";
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -36,12 +37,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // ROUTES
 const task = require('./routes/task')
 
-
-
-
 app.use('/api/task', task);
-
-
 
 
 // establishing the server on the port 3000
