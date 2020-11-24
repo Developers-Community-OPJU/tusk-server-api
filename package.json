@@ -1,0 +1,22 @@
+{
+  "name": "tusk-server",
+  "version": "1.0.0",
+  "description": "a total user task management android application",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js -w"
+  },
+  "author": "aman vishwakarma",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "mongoose": "^5.10.15",
+    "morgan": "^1.10.0"
+  }
+}
