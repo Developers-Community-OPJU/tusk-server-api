@@ -54,6 +54,20 @@ router.delete('/pull/:id', async (req, res) => {
     }
 });
 
+// LIST ALL TASKS
+router.get("/find/all", async (req, res) => {
+    try {
+      const tasks = await Task.find({});       
+      res.status(200).json({
+        msg: "Task Listing",
+        tasks,
+      });
+    } catch (error) {
+      res.send(error);
+    }
+  });
+
+// FINDING PARTICULAR TASK
 router.get("/find/:id", async (req, res) => {
     try {
       const task = await Task
