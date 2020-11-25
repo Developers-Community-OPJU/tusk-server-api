@@ -3,13 +3,13 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
-// const config = require('config')
+const config = require('config')
 
 // CONFIGURING CONFIG JWTPRIVATEKEY
-// if(!config.get("jwtPrivateKey")){
-//   console.log("FATAL ERROR : jwtPrivateKey is not defined");
-//   process.exit(1);
-// }
+if(!config.get("jwtPrivateKey")){
+  console.log("FATAL ERROR : jwtPrivateKey is not defined");
+  process.exit(1);
+}
 
 // CONFIGURING MONODB WITH MONGOOSE
 const mongoose = require("mongoose");
@@ -35,8 +35,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 // ROUTES
+const auth = require('./routes/auth')
 const task = require('./routes/task')
 
+app.use('/api/auth', auth);
 app.use('/api/task', task);
 
 
