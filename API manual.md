@@ -16,5 +16,5 @@ AUTH ROUTES
 ------------------------------------------------------------------
 REQ TYPE        ENDPOINT                    DESCRIPTION
 -------------------------------------------------------------------
-[GET]           https://tusk-server-api.herokuapp.com/api/auth/login           LOGIN METHOD
-[GET]           https://tusk-server-api.herokuapp.com/api/auth/register        REGISTER METHOD
+[POST]           https://tusk-server-api.herokuapp.com/api/auth/login           LOGIN METHOD
+[POST]           https://tusk-server-api.herokuapp.com/api/auth/register        REGISTER METHOD
