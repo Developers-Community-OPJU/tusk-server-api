@@ -13,7 +13,7 @@ REQ TYPE        ENDPOINT                    DESCRIPTION
 
 NEW ADDED
 
-[GET]           https://tusk-server-api.herokuapp.com/api/task/accept/:id      ID IS THE ID OF THE TASK
+[GET]           https://tusk-server-api.herokuapp.com/api/task/accept/:id      "ID" IS THE ID OF THE TASK
 
 
 AUTH ROUTES
