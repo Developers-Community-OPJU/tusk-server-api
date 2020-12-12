@@ -3,10 +3,9 @@ const Joi = require('joi');
 
 // TASK MODEL
 const TaskModel = new mongoose.Schema({
-
     heading: { type: String , required: true, trim: true, maxlength: 255 },
     description: { type: String, required: true, trim: true },
-    assignedBy: { type: String  },
+    assignedBy: { type: String },
     milestones : [{ 
         title : { type: String, required: true, maxlength: 255},
         description: { type: String, required: true, trim: true },
@@ -19,13 +18,17 @@ const TaskModel = new mongoose.Schema({
     status: {
         type: String,
         enum: ["Accepted", "Declined", "Progress","Completed","Not Accepted"],
-        default: "Not Accepted"
+        default: "Not Accepted" 
     },
     assignedTo: {
         type: [mongoose.Schema.Types.ObjectId],
         ref: 'users'
     },
-   
+    createdAt : {
+        type : Date,
+        default : Date.now
+    },
+       
 });
 
 

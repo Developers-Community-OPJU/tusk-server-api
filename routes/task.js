@@ -1,5 +1,6 @@
 const express = require('express');
 const { date } = require('joi');
+const { toPlainObject } = require('lodash');
 const router = express.Router();
 const { Task, validateTask } = require('../models/TaskModel');
 
@@ -113,7 +114,50 @@ router.put("/update/:id", async (req, res) => {
     }
 });
 
+
+
+// ACCEPT TASK
+router.get('/accept/:id', async (req,res)=>{
+  try {
+    let task = await Task.findOne({_id:req.params.id})
+    if(!task) return res.json({msg : "NO Such Task Exists."});    
+    task.status = "Accepted";
+    task.save();
+    res.json({
+      msg : "Task Accepted!",
+      task
+    })
+
+  } catch (error) {
+      res.send(error)
+  }
+});
+
+
+//========================================================
+// MILESTONES ROUTES
+// =======================================================
+
 // ADD NEW MILESTONE
+router.put('/milestone/add/:id', async (req,res)=>{
+  if(!req.body) return res.json({msg : "Something went wrong!"})
+  const milestone = req.body;
+  try {
+    let task = await Task.update({_id: req.params.id},{
+      $push :{
+        milestones : milestone
+      }
+    })
+    res.json({
+        msg : "Milestone Added Successfully"        
+    });
+
+  } catch (error) {
+      res.send(error)
+  }
+});
+
+
 
 module.exports = router;
 

@@ -8,8 +8,8 @@ const User_Schema = new mongoose.Schema({
 
     RID: { type: String, required: true, unique: true, trim: true, minlength: 6, maxlength: 255 },
     password: { type: String, required: true, bcrypt: true, minlength: 8, maxlength: 1024 },
-    firstName: { type: String, required: true },
-    lastName: { type: String },
+    firstName: { type: String, required: true , trim: true},
+    lastName: { type: String, trim : true },
     branch: { type: String, required: true },
     userRole: {
         type: String,
