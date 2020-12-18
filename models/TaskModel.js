@@ -17,7 +17,7 @@ const TaskModel = new mongoose.Schema({
     }],
     status: {
         type: String,
-        enum: ["Accepted", "Declined", "Progress","Completed","Not Accepted"],
+        enum: ["Accepted","Progress","Completed","Not Accepted"],
         default: "Not Accepted" 
     },
     assignedTo: {
@@ -28,6 +28,10 @@ const TaskModel = new mongoose.Schema({
         type : Date,
         default : Date.now
     },
+    dueDate : {
+        type : Date,
+        required : true
+    }
        
 });
 

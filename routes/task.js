@@ -29,6 +29,7 @@ router.post('/push', async (req, res) => {
             assignedBy: req.body.assignedBy,
             assignedTo: req.body.assignedTo,
             milestones: req.body.milestones,
+            dueDate : req.body.dueDate
         };
         let task = new Task(newTask);
         // SAVING THE DOCUMENT
@@ -151,6 +152,29 @@ router.put('/milestone/add/:id', async (req,res)=>{
     res.json({
         msg : "Milestone Added Successfully"        
     });
+
+  } catch (error) {
+      res.send(error)
+  }
+});
+
+
+//========================================================
+// SEARCHING AND FILTERING ROUTES
+// =======================================================
+
+// ADVANCED SEARCH QUERIES 
+// USING THE QUERY PARAMETER
+router.get('/search', async (req,res)=>{
+  try {
+    const query = req.query;
+    console.log(query)
+    let task = await Task.find(query)
+    if(!task) return res.json({msg : "Couldn't Find the Tasks.. Try Again"}); 
+    res.json({
+      msg : "Tasks Found",
+      task
+    })
 
   } catch (error) {
       res.send(error)

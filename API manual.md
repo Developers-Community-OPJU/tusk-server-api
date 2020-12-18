@@ -29,3 +29,11 @@ MILESTONES ROUTES
 REQ TYPE        ENDPOINT                    DESCRIPTION
 -------------------------------------------------------------------
 [PUT]           https://tusk-server-api.herokuapp.com/api/task/milestone/add/:id        ADDING NEW MILESTONE TO THE TASK
+
+
+SEARCH  AND FILTER ROUTE
+------------------------------------------------------------------
+REQ TYPE        ENDPOINT                    DESCRIPTION
+-------------------------------------------------------------------
+[GET]           https://tusk-server-api.herokuapp.com/api/task/search      USER QUERY PARAMETERS HERE TO SEARCH
+
