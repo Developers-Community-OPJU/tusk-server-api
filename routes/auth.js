@@ -80,7 +80,7 @@ router.post('/login', async (req, res) => {
 
 router.get('/getCurrentUser', async (req, res) => {
     try {
-        const token = req.header("x-dc-auth-token");
+        const token = req.header("x-auth-token");
         console.log("TOKEN  ::" , token)
         if (!token) return res.status(401).json({ msg: "Access denied, No token provided.", allowed : false });
         try {             

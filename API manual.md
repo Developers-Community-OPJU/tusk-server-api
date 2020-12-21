@@ -36,4 +36,5 @@ SEARCH  AND FILTER ROUTE
 REQ TYPE        ENDPOINT                    DESCRIPTION
 -------------------------------------------------------------------
 [GET]           https://tusk-server-api.herokuapp.com/api/task/search      USER QUERY PARAMETERS HERE TO SEARCH
+[GET]           https://tusk-server-api.herokuapp.com/api/user/search      USER QUERY PARAMETERS HERE TO SEARCH
 

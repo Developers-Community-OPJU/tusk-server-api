@@ -37,9 +37,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // ROUTES
 const auth = require('./routes/auth')
 const task = require('./routes/task')
+const user = require('./routes/user')
 
 app.use('/api/auth', auth);
 app.use('/api/task', task);
+app.use('/api/user', user);
 
 
 // establishing the server on the port 3000
