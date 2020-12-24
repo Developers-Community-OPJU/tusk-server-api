@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 // CREATING TASK
 router.post('/push', async (req, res) => {
-    try {
+    try {``
         // validating task
         const { error } = validateTask(req.body);
         if (error) return res.status(400).json({
@@ -31,6 +31,9 @@ router.post('/push', async (req, res) => {
             milestones: req.body.milestones,
             dueDate : req.body.dueDate
         };
+
+        // console.log(newTask)
+
         let task = new Task(newTask);
         // SAVING THE DOCUMENT
         let result = await task.save();

@@ -29,7 +29,7 @@ const TaskModel = new mongoose.Schema({
         default : Date.now
     },
     dueDate : {
-        type : Date,
+        type : String,
         required : true
     }
        
@@ -44,7 +44,8 @@ function validateTask(task) {
         description: Joi.string().required(),
         assignedBy: Joi.string().required(),
         assignedTo: Joi.string().required().min(6).max(255),
-        milestones : Joi.array()   
+        milestones : Joi.array(),
+        dueDate : Joi.date().required()
     });
     
     return schema.validate(task);
