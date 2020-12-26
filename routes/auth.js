@@ -85,9 +85,10 @@ router.get('/getCurrentUser', async (req, res) => {
         if (!token) return res.status(401).json({ msg: "Access denied, No token provided.", allowed : false });
         try {             
             let decoded = jwt.verify(token, config.get('jwtPrivateKey'));
-            // checking duplicate user
-            decoded = await User.findOne({username : decoded.username})
-                .select('username firstName lastName userRole -_id')
+            console.log(decoded)
+            // checking duplicate user 
+            decoded = await User.findOne({RID : decoded.RID})
+                                .select('-tasks -__v');
             if(decoded) {
                 res.json({
                     msg : `user Found with username ${decoded.username}`,

@@ -39,7 +39,7 @@ function validateUser(user) {
 }
 
 User_Schema.methods.generateAuthToken = function(){
-    const token = jwt.sign({username : this.RID, userRole : this.userRole}, config.get("jwtPrivateKey"))
+    const token = jwt.sign({ RID : this.RID, userRole : this.userRole}, config.get("jwtPrivateKey"))
     return token;
 }
 

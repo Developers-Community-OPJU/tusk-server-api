@@ -38,3 +38,7 @@ REQ TYPE        ENDPOINT                    DESCRIPTION
 [GET]           https://tusk-server-api.herokuapp.com/api/task/search      USER QUERY PARAMETERS HERE TO SEARCH
 [GET]           https://tusk-server-api.herokuapp.com/api/user/search      USER QUERY PARAMETERS HERE TO SEARCH
 
+
+REQ TYPE        ENDPOINT                    DESCRIPTION
+-------------------------------------------------------------------
+[GET]           https://tusk-server-api.herokuapp.com/api/auth/getCurrentUser      GETTING CURRENT USER PASS TOKEN TO HEADER AS "x-auth-token"
