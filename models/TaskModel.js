@@ -43,7 +43,7 @@ function validateTask(task) {
         heading: Joi.string(),
         description: Joi.string().required(),
         assignedBy: Joi.string().required(),
-        assignedTo: Joi.string().required().min(6).max(255),
+        assignedTo: Joi.array(),
         milestones : Joi.array(),
         dueDate : Joi.date().required()
     });

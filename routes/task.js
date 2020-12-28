@@ -119,7 +119,6 @@ router.put("/update/:id", async (req, res) => {
 });
 
 
-
 // ACCEPT TASK
 router.get('/accept/:id', async (req,res)=>{
   try {
@@ -178,13 +177,10 @@ router.get('/search', async (req,res)=>{
       msg : "Tasks Found",
       task
     })
-
   } catch (error) {
       res.send(error)
   }
 });
-
-
 
 module.exports = router;
 
